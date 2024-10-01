@@ -29,12 +29,17 @@ resource "aws_route_table" "app-rtg" {
   }
 }
 
-resource "aws_route_table_association" "my_route_table_association-web" {
-  subnet_id      = aws_subnet.web.id
+resource "aws_route_table_association" "my_route_table_association-web-1a" {
+  subnet_id      = aws_subnet.web-1a.id
   route_table_id = aws_route_table.web-rtg.id
 }
 
-resource "aws_route_table_association" "my_route_table_association-app" {
-  subnet_id      = aws_subnet.app.id
+resource "aws_route_table_association" "my_route_table_association-app-1a" {
+  subnet_id      = aws_subnet.app-1a.id
   route_table_id = aws_route_table.app-rtg.id
+}
+
+resource "aws_route_table_association" "my_route_table_association-web-1b" {
+  subnet_id      = aws_subnet.web-1b.id
+  route_table_id = aws_route_table.web-rtg.id
 }

@@ -1,13 +1,13 @@
 #!/bin/bash
 # Update the package list
-apt-get update -y
+sudo apt-get update -y
 
 # Install Apache
-apt-get install -y apache2
+sudo apt-get install -y apache2
 
 # Start Apache and enable it to run on boot
-systemctl start apache2
-systemctl enable apache2
+sudo systemctl start apache2
+sudo stemctl enable apache2
 
 # Create index.html
 cat <<EOL > /var/www/html/index.html
